@@ -1,0 +1,473 @@
+start:-
+  writeln(" Welcome To MOVIT System "),
+  writeln("Here to help you to select the perfect movie for tonight!^^"),nl,menu.
+
+menu:-
+    writeln("What Genre do you prefer?"),
+    writeln('1- Action.'),
+    writeln('2- Drama.'), 
+    read(B),
+    (not(B==1),not(B==2) -> 
+    writeln("Invalid Input! You must write either 1-2"),menu;case(B)).
+
+case(1):-
+    writeln("What is your prefered year of publication?"),
+    writeln('1- 2000 and above (2000-2022).'),
+    writeln('2- older than 2000(1970?-1999).'),
+    read(C),
+    (not(C==1),not(C==2) -> 
+    writeln("Invalid Input! You must write either 1-2"),case(1);((C==1)->ageAppropriateness1;ageAppropriateness2)).
+
+case(2):-
+    writeln("What is your prefered year of publication?"),
+    writeln('1- 2000 and above (2000-2022).'),
+    writeln('2- older than 2000(1970?-1999).'),
+    read(C),
+    (not(C==1),not(C==2) -> 
+    writeln("Invalid Input! You must write either 1-2"),case(2);((C==1)->ageAppropriateness3;ageAppropriateness4)).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+%-----------------------------------START OF 2000 and above---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+
+ageAppropriateness1:-
+    writeln("What is the movie's age restriction?"),
+    writeln('1- U(all ages).'),
+    writeln('2- PG-13 (13+).'),
+    writeln('3- A(18+).'),
+    read(E),
+    (not(E==1),not(E==2),not(E==3) -> 
+    writeln("Invalid Input! You must write either 1-3"),ageAppropriateness1;((E==1)->rating1U;
+                                                                            (E==2)->rating2PG;
+                                                                            (E==3)->rating3A)).
+%-----------------------------------**********************---------------------------------------------%
+%-----------------------------------Case 1 Action------------------------------------------------------%
+          %-----------------------------------U------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating1U:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(F),
+    (not(F==1),not(F==2),not(F==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating1U;((F==1)->duration1U;
+                                                                 (F==2)->duration2U)).
+
+duration1U:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(I),
+    (not(I==1),not(I==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1U;((I==1)->writeln('Spider-Man - 2002'),nl,writeln('Description:'),writeln('After being bitten by a genetically-modified spider, a shy teenager gains spider-like abilities that he uses to fight injustice as a masked superhero and face a vengeful enemy.');
+                                                                   (I==2)->writeln('Scott Pilgrim vs. the world - 2010'),nl,writeln('Description:'),writeln('In a magically realistic version of Toronto, a young man must defeat his new girlfriend seven evil exes one by one in order to win her heart.'))).
+duration2U:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(J),
+    (not(J==1),not(J==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2U;((J==1)->writeln('the karate kid - 1984'),nl,writeln('Description:'),writeln('A martial arts master agrees to teach karate to a bullied teenager.');
+                                                                   (J==2)->writeln('sky high - 2005'),nl,writeln('Description:'),writeln('Set in an era where superheroes are commonly known and accepted, young William Stronghold, the son of the Commander and Jetstream, tries to find a balance between being a normal teenager and an extraordinary being.'))).
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+        %-----------------------------------PG-13------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating2PG:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(M),
+    (not(M==1),not(M==2),not(M==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating2PG;((M==1)->duration1PG;
+                                                                 (M==2)->duration2PG)).
+
+duration1PG:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(P),
+    (not(P==1),not(P==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1PG;((P==1)->writeln('master and commander - 2003'),nl,writeln('Description:'),writeln('In 1805, aboard the H.M.S. Surprise, the brash Captain Jack Aubrey (Russell Crowe) and his trusted friend, the ships scholarly surgeon, Stephen Maturin (Paul Bettany), are ordered to hunt down and capture a powerful French vessel off the South American coast. Though Napoleon is winning the war and the men and their crew face an onslaught of obstacles, including their own internal battles, Lucky Jack is determined that nothing will stop the Surprise from completing its mission.');
+                                                                   (P==2)->writeln('Serenaity - 2005'),nl,writeln('Description:'),writeln('The crew of the ship Serenity try to evade an assassin sent to recapture telepath River'))).
+duration2PG:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(Q),
+    (not(Q==1),not(Q==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2PG;((Q==1)->writeln('Rat racer - 20001'),nl,writeln('Description:'),writeln('A Las Vegas casino magnate, determined to find a new avenue for wagering, sets up a race for money.');
+                                                                   (Q==2)->writeln('The promise - 2016'),nl,writeln('Description:'),writeln('Set during the last days of the Ottoman Empire, The Promise follows a love triangle between Michael, a brilliant medical student, the beautiful and sophisticated Ana, and Chris - a renowned American journalist based in Paris.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+          %-----------------------------------A------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating3A:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(T),
+    (not(T==1),not(T==2),not(T==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating3A;((T==1)->duration1A;
+                                                                 (T==2)->duration2A)).
+
+duration1A:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(W),
+    (not(W==1),not(W==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1A;((W==1)->writeln('Gangs of Wasseypur - 2012'),nl,writeln('Description:'),writeln('Sardar sets out to avenge his father who was murdered by Ramadhir Singh, a cunning politician and mining kingpin. In the ensuing war, many unresolved family feuds erupt creating unrest.');
+                                                                   (W==2)->writeln('Kill Bill: Vol.1 - 2003'),nl,writeln('Description:'),writeln('After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.'))).
+duration2A:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(X),
+    (not(X==1),not(X==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2A;((X==1)->writeln('Die another day - 2002'),nl,writeln('Description:'),writeln('James Bond is sent to investigate the connection between a North Korean terrorist and a diamond mogul, who is funding the development of an international space weapon.');
+                                                                   (X==2)->writeln('Stuber - 2019'),nl,writeln('Description:'),writeln('A detective recruits his Uber driver into an unexpected night of adventure.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+%----------------------------------- END OF 2000 and above---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+    
+
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+%-----------------------------------START OF older than 2000---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+ageAppropriateness2:-
+    writeln("What is the movie's age restriction?"),
+    writeln('1- U(all ages).'),
+    writeln('2- PG-13 (13+).'),
+    writeln('3- A(18+).'),
+    read(E),
+    (not(E==1),not(E==2),not(E==3) -> 
+    writeln("Invalid Input! You must write either 1-3"),ageAppropriateness2;((E==1)->rating1U2;
+                                                                            (E==2)->rating2PG2;
+                                                                            (E==3)->rating3A2)).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+          %-----------------------------------U------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+
+rating1U2:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(F),
+    (not(F==1),not(F==2),not(F==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating1U2;((F==1)->duration1U2;
+                                                                 (F==2)->duration2U2)).
+
+duration1U2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(I),
+    (not(I==1),not(I==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1U2;((I==1)->writeln('Batman - 1989'),nl,writeln('Description:'),writeln('Having witnessed his parents brutal murder as a child, millionaire philanthropist Bruce Wayne (Michael Keaton) fights crime in Gotham City disguised as Batman, a costumed hero who strikes fear into the hearts of villains. But when a deformed madman who calls himself The Joker (Jack Nicholson) seizes control of Gothams criminal underworld, Batman must face his most ruthless nemesis ever while protecting both his identity and his love interest, reporter Vicki Vale (Kim Basinger).');
+                                                                   (I==2)->writeln('Mission impossible - 1996'),nl,writeln('Description:'),writeln('An American agent, under false suspicion of disloyalty, must discover and expose the real spy without the help of his organization.'))).
+duration2U2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(J),
+    (not(J==1),not(J==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2U2;((J==1)->writeln('First knight - 1995 '),nl,writeln('Description:'),writeln('Handsome swordsman Lancelot (Richard Gere) is incredibly skilled at fighting, but when he meets the lovely Guinevere (Julia Ormond), he cant seem to get past her defenses. She is betrothed to King Arthur (Sean Connery) and plans to go ahead with the wedding, despite her attraction to Lancelot. When the devious warrior Malagant (Ben Cross) rises up against Arthur, Lancelot must try to put his feelings aside and defend his king, Guinevere and all of Camelot.');
+                                                                   (J==2)->writeln('13th warrior - 1999'),nl,writeln('Description:'),writeln('A Muslim ambassador exiled from his homeland, Ahmad ibn Fadlan (Antonio Banderas) finds himself in the company of Vikings. While the behavior of the Norsemen initially offends ibn Fadlan, the more cultured outsider grows to respect the tough, if uncouth, warriors. During their travels together, ibn Fadlan and the Vikings get word of an evil presence closing in, and they must fight the frightening and formidable force, which was previously thought to exist only in legend.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+       %-----------------------------------PG-13-------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating2PG2:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(M),
+    (not(M==1),not(M==2),not(M==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating2PG2;((M==1)->duration1PG2;
+                                                                 (M==2)->duration2PG2)).
+
+duration1PG2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(P),
+    (not(P==1),not(P==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1PG2;((P==1)->writeln('Sorry, I could not find an exact match.');
+                                                                   (P==2)->writeln('Star Trek: First Contact - 1996 '),nl,writeln('Description:'),writeln('The Enterprise and its crew follow a Borg ship through a time warp to prevent the Borg from taking over the Earth in a past era. Stuck in the past, Geordi La Forge (LeVar Burton) helps a pioneer of space travel (James Cromwell) in his efforts to create the first warp drive while Capt. Picard (Patrick Stewart) and Cmdr. Data (Brent Spiner) battle the Borg Queen (Alice Krige) as she tries to take over the Enterprise.'))).
+duration2PG2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(Q),
+    (not(Q==1),not(Q==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2PG2;((Q==1)->writeln('Mystery man -1999'),nl,writeln('Description:'),writeln('Champion City already has a superhero, the appropriately named Captain Amazing (Greg Kinnear), but that does not deter the citys seven quirky amateur crime-fighters, who use the Captains capture at the hands of villain Casanova Frankenstein (Geoffrey Rush) as motivation to prove themselves. The only problem is that their strange powers -- silverware hurling, bowling, shovel skills, incompetent invisibility and deadly flatulence -- are not doing them any favors.');
+                                                                   (Q==2)->writeln('Wrongfully Accused - 1998 '),nl,writeln('Description:'),writeln('Art patron Hibbing Goodhue (Michael York) is murdered, and an accident-prone concert violinist, Ryan Harrison (Leslie Nielsen), is arrested as the main suspect. Harrison did not do it, but he is convicted of the crime. He is on the bus that will take him to prison, but he manages to escape after a traffic accident. On the run, Harrison tries to clear his name by seeking out the real killer, while the police, led by Lt. Fergus Falls (Richard Crenna), hunt him down.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%-----------------------------------Case 1 Action------------------------------------------------------%
+          %-----------------------------------A------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+
+rating3A2:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(T),
+    (not(T==1),not(T==2),not(T==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating3A2;((T==1)->duration1A2;
+                                                                 (T==2)->duration2A2)).
+
+duration1A2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(W),
+    (not(W==1),not(W==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1A2;((W==1)->writeln('Die Hard - 1988'),nl,writeln('Description:'),writeln('New York City policeman John McClane (Bruce Willis) is visiting his estranged wife (Bonnie Bedelia) and two daughters on Christmas Eve. He joins her at a holiday party in the headquarters of the Japanese-owned business she works for. But the festivities are interrupted by a group of terrorists who take over the exclusive high-rise, and everyone in it. Very soon McClane realizes that there is no one to save the hostages -- but him.');
+                                                                   (W==2)->writeln('Raiders of the Lost Ark - 1981 '),nl,writeln('Description:'),writeln('Epic tale in which an intrepid archaeologist tries to beat a band of Nazis to a unique religious relic which is central to their plans for world domination. Battling against a snake phobia and a vengeful ex-girlfriend, Indiana Jones is in constant peril, making hairs-breadth escapes at every turn in this celebration of the innocent adventure movies of an earlier era.'))).
+duration2A2:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(X),
+    (not(X==1),not(X==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2A2;((X==1)->writeln('Conan the Barbarian - 1982'),nl,writeln('Description:'),writeln('Orphaned boy Conan (Arnold Schwarzenegger) is enslaved after his village is destroyed by the forces of vicious necromancer Thulsa Doom (James Earl Jones), and is compelled to push "The Wheel of Pain" for many years. Once he reaches adulthood, Conan sets off across the prehistoric landscape of the Hyborian Age in search of the man who killed his family and stole his fathers sword. With beautiful warrior Valeria (Sandahl Bergman) and archer Subotai (Gerry Lopez), he faces a supernatural evil.');
+                                                                   (X==2)->writeln('The Edge - 1997'),nl,writeln('Description:'),writeln('The plane carrying wealthy Charles Morse (Anthony Hopkins) crashes down in the Alaskan wilderness. Together with the two other passengers, photographer Robert Green (Alec Baldwin) and assistant Stephen (Harold Perrineau), Charles devises a plan to help them reach civilization. However, his biggest obstacle might not be the elements, or even the Kodiak bear stalking them -- it could be Robert, whom Charles has reason to believe is having an affair with his wife and would not mind seeing him dead.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Action------------------------------------------------------%
+%-----------------------------------END OF older than 2000---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 2 Drama------------------------------------------------------%
+%-----------------------------------START OF 2000 and above---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------
+
+%----------------------------------Case 2 Drama---------------------------------%
+ageAppropriateness3:-
+    writeln("What is the movie's age restriction?"),
+    writeln('1- U(all ages).'),
+    writeln('2- PG-13 (13+).'),
+    writeln('3- A(18+).'),
+    read(E),
+    (not(E==1),not(E==2),not(E==3) -> 
+    writeln("Invalid Input! You must write either 1-3"),ageAppropriateness3;((E==1)->rating3U3;
+                                                                            (E==2)->rating2PG3;
+                                                                            (E==3)->rating4A)).
+%-----------------------------------U---------------------------------------------%
+rating3U3:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(F),
+    (not(F==1),not(F==2),not(F==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating3U3;((F==1)->duration1U3;
+                                                                 (F==2)->duration2U3)).
+
+duration1U3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(I),
+    (not(I==1),not(I==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1U3;((I==1)->writeln('Aashiqui2 - 2013'),nl,writeln('Description:'),writeln('Rahul, a singing sensation, falls in love with Aarohi, a girl who sings in the bar. He helps her accomplish her dream of becoming a famous singer, but his own shortcomings jeopardize their future.');
+                                                                   (I==2)->writeln('buried - 2010 '),nl,writeln('Description:'),writeln('A civilian truck driver in Iraq, Paul Conroy (Ryan Reynolds) falls victim to a band of insurgents. An unknown length of time later, Paul awakes in a coffin, with little more than a lighter, a cell phone, and his ever-growing anxiety. Faced with a dwindling oxygen supply and a dying battery, Paul must fight panic, despair and delirium as he awaits a rescue that might not arrive in time.'))).
+duration2U3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(J),
+    (not(J==1),not(J==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2U3;((J==1)->writeln('World Trade Center - 2006 '),nl,writeln('Description:'),writeln('Two Port Authority officers, Sgt. John McLoughlin (Nicolas Cage) and Officer Will Jimeno (Michael Peña), become trapped in the rubble of the World Trade Center after going in to help people escape from the buildings during the terrorist attacks of Sept. 11, 2001');
+                                                                   (J==2)->writeln('Contagion - 2011'),nl,writeln('Description:'),writeln('When Beth Emhoff (Gwyneth Paltrow) returns to Minnesota from a Hong Kong business trip, she attributes the malaise she feels to jet lag. However, two days later, Beth is dead, and doctors tell her shocked husband (Matt Damon) that they have no idea what killed her. Soon, many others start to exhibit the same symptoms, and a global pandemic explodes. Doctors try to contain the lethal microbe, but society begins to collapse as a blogger (Jude Law) fans the flames of paranoia.'))).
+%----------------------------------Case 2 Drama---------------------------------%
+%-----------------------------------PG-13---------------------------------------------%
+%-----------------------------------2000 and above----------------------------------%
+rating2PG3:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(M),
+    (not(M==1),not(M==2),not(M==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating2PG3;((M==1)->duration1PG3;
+                                                                 (M==2)->duration2PG3)).
+
+duration1PG3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(P),
+    (not(P==1),not(P==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1PG3;((P==1)->writeln('Dare mo shiranai - 2004'),nl,writeln('Description:'),writeln('Preteen Akira Fukushima (Yûya Yagira) and his young siblings have been abandoned by their mother, Keiko (You). Keiko, who has moved in with a new lover, has left Akira in charge of his brother, two sisters and a whole apartment, with little money and food to see them through. Akira and the other children, who were never enrolled in school, struggle to survive without basic amenities as they cope with a strange, solitary existence in a Tokyo apartment building.');
+                                                                   (P==2)->writeln('Doubt - 2008 '),nl,writeln('Description:'),writeln('In 1964 the winds of change are sweeping through Sister Aloysius (Meryl Streep) St. Nicholas school. Father Flynn (Philip Seymour Hoffman), a charismatic priest, is advocating reform of the schools strict customs, and the first black student has just been accepted. When a fellow nun (Amy Adams) tells Sister Aloysius that Father Flynn may be paying too much personal attention to the student, Sister Aloysius begins a personal crusade against the priest -- despite her lack of evidence.'))).
+duration2PG3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(Q),
+    (not(Q==1),not(Q==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2PG3;((Q==1)->writeln('Anonymous - 2011 '),nl,writeln('Description:'),writeln('As royal troops set fire to the Globe Theatre, Elizabethan-era playwright Ben Jonson (Sebastian Armesto) is tortured by Robert Cecil (Edward Hogg), who demands to know if Edward de Vere, the Earl of Oxford (Rhys Ifans), is the true author of the writings attributed to William Shakespeare (Rafe Spall). Flashbacks reveal Oxfords passionate affair with Queen Elizabeth I and how -- in his younger days -- Oxford charmed her with plays like A Midsummer Nights Dream.');
+                                                                   (Q==2)->writeln('The signal - 2014'),nl,writeln('Description:'),writeln('A surprise awaits three college students (Brenton Thwaites, Beau Knapp, Olivia Cooke) who think they have tracked a rival computer hacker to a shed in the Nevada desert.'))).
+
+%----------------------------------Case 2 Drama---------------------------------%
+%-----------------------------------A---------------------------------------------%
+%-----------------------------------2000 and above----------------------------------%
+
+
+rating4A:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(T),
+    (not(T==1),not(T==2),not(T==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating3A;((T==1)->duration1A3;
+                                                                 (T==2)->duration2A3)).
+
+duration1A3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(W),
+    (not(W==1),not(W==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1A3;((W==1)->writeln('Gone girl - 2014 '),nl,writeln('Description:'),writeln('In Carthage, Mo., former New York-based writer Nick Dunne (Ben Affleck) and his glamorous wife Amy (Rosamund Pike) present a portrait of a blissful marriage to the public. However, when Amy goes missing on the couples fifth wedding anniversary, Nick becomes the prime suspect in her disappearance. The resulting police pressure and media frenzy cause the Dunnes image of a happy union to crumble, leading to tantalizing questions about who Nick and Amy truly are.');
+                                                                   (W==2)->writeln('Black swan - 2010'),nl,writeln('Description:'),writeln('Nina (Natalie Portman) is a ballerina whose passion for the dance rules every facet of her life. When the companys artistic director decides to replace his prima ballerina for their opening production of Swan Lake, Nina is his first choice. She has competition in newcomer Lily (Mila Kunis) however. While Nina is perfect for the role of the White Swan, Lily personifies the Black Swan. As rivalry between the two dancers transforms into a twisted friendship, Ninas dark side begins to emerge.'))).
+duration2A3:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(X),
+    (not(X==1),not(X==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2A3;((X==1)->writeln('Dragged Across Concrete - 2018'),nl,writeln('Description:'),writeln('Disillusioned police partners fall into the criminal underworld after they are suspended from the force for assaulting a suspect.');
+                                                                   (X==2)->writeln('Rings - 2005'),nl,writeln('Description:'),writeln('A young woman (Matilda Lutz) becomes worried about her boyfriend (Alex Roe) when he explores a dark subculture surrounding a mysterious videotape said to kill the watcher seven days after he has viewed it. She sacrifices herself to save her boyfriend and in doing so makes a horrifying discovery: there is a movie within the movie that no one has ever seen before.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+%%-----------------------------------Case 1 Drama------------------------------------------------------%
+%-----------------------------------END OF 2000 and above ---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+%-----------------------------------**********************---------------------------------------------%
+%-----------------------------------START OF older than 2000---------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+ageAppropriateness4:-
+    writeln("What is the movie's age restriction?"),
+    writeln('1- U(all ages).'),
+    writeln('2- PG-13 (13+).'),
+    writeln('3- A(18+).'),
+    read(E),
+    (not(E==1),not(E==2),not(E==3) -> 
+    writeln("Invalid Input! You must write either 1-3"),ageAppropriateness4;((E==1)->rating1U4;
+                                                                            (E==2)->rating2PG4;
+                                                                            (E==3)->rating3A4)).
+
+%-----------------------------------**********************---------------------------------------------%
+          %-----------------------------------U------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating1U4:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(F),
+    (not(F==1),not(F==2),not(F==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating1U4;((F==1)->duration1U4;
+                                                                 (F==2)->duration2U4)).
+
+duration1U4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(I),
+    (not(I==1),not(I==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1U4;((I==1)->writeln('Sacrifice'),nl,writeln('Description:'),writeln('');
+                                                                   (I==2)->writeln('Ladri Di Bicicletta - 1948'),nl,writeln('Description:'),writeln('Unemployed Antonio Ricci (Lamberto Maggiorani) is elated when he finally finds work hanging posters around war-torn Rome. His wife, Maria (Lianella Carell), sells the familys bed linens to retrieve Antonios bicycle from the pawnshop so he can take the job. However, disaster strikes when Antonios bicycle is stolen, and his new job is doomed unless he can find the thief. With the help of his lively son, Bruno (Enzo Staiola), Antonio combs the city, growing increasingly desperate for justice.'))).
+duration2U4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(J),
+    (not(J==1),not(J==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2U4;((J==1)->writeln('Anna and the King - 1999 '),nl,writeln('Description:'),writeln('Anna (Jodie Foster) has been employed to educate the kings (Chow Yun-Fat) 58 children. She knows very little of King Mongkut, apart from the fact that his people revere him as a god. She brings with her an East vs. West prejudice against the king, considering him to be uncivilized. She soon realizes that her views are more than matched by the rulers own preconceptions about the West and particularly this impertinent English woman.');
+                                                                   (J==2)->writeln('Miracle on 34th Street’ - 1947 '),nl,writeln('Description:'),writeln('In this Christmas classic, an old man going by the name of Kris Kringle (Edmund Gwenn) fills in for an intoxicated Santa in Macys annual Thanksgiving Day parade. Kringle proves to be such a hit that he is soon appearing regularly at the chains main store in midtown Manhattan. When Kringle surprises customers and employees alike by claiming that he really is Santa Claus, it leads to a court case to determine his mental health and, more importantly, his authenticity.'))).
+
+%-----------------------------------**********************---------------------------------------------%
+        %-----------------------------------PG-13------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating2PG4:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(M),
+    (not(M==1),not(M==2),not(M==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating2PG4;((M==1)->duration1PG4;
+                                                                 (M==2)->duration2PG4)).
+
+duration1PG4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(P),
+    (not(P==1),not(P==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1PG4;((P==1)->writeln('Hamlet - 1996 '),nl,writeln('Description:'),writeln('In the only unabridged film version of the classic play, here updated to the 19th century, Prince Hamlet (Kenneth Branagh) is traumatized by the revelation that his father was murdered by the present king, Claudius (Derek Jacobi), with the aid of Hamlets mother, Gertrude (Julie Christie). Hamlet considers a plot for revenge and mistakenly kills Polonius (Richard Briers), the father of his love, Ophelia (Kate Winslet), causing a chain reaction that leads to a climactic and tragic ending');
+                                                                   (P==2)->writeln('Sorry, I couldn’t find an exact match.'))).
+duration2PG4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(Q),
+    (not(Q==1),not(Q==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2PG4;((Q==1)->writeln('Sorry, I couldn’t find an exact match.');
+                                                                   (Q==2)->writeln('Copycat - 1995 '),nl,writeln('Description:'),writeln('Deeply shaken after being assaulted by a deranged man (Harry Connick Jr.), Dr. Helen Hudson (Sigourney Weaver) must face her fears if she is to help solve a series of murders. Helen is a psychologist who has studied serial killers, but this case, in which the crimes seem modeled on the work of infamous deviants, is grimmer than most. With the help of two San Francisco police officers (Holly Hunter, Dermot Mulroney), Helen tries to come between the murderer and his next victim.'))).
+
+
+%-----------------------------------**********************---------------------------------------------%
+          %-----------------------------------A------------------------------------------%
+%-----------------------------------**********************---------------------------------------------%
+
+rating3A4:-
+    writeln("What is the movie rating you prefer (on scale of 10)?"),
+    writeln('1-7 and above.'),
+    writeln('2-less than 7.'),
+    read(T),
+    (not(T==1),not(T==2),not(T==3) ->
+    writeln("Invalid Input! You must write either 1-3"),rating3A4;((T==1)->duration1A4;
+                                                                 (T==2)->duration2A4)).
+
+duration1A4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(W),
+    (not(W==1),not(W==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration1A4;((W==1)->writeln('The Shawshank Redemption’- 1994'),nl,writeln('Description:'),writeln('Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he did not commit the crimes. While there, he forms a friendship with Red (Morgan Freeman), experiences brutality of prison life, adapts, helps the warden, etc., all in 19 years.');
+                                                                   (W==2)->writeln('Paths of Glory - 1957 '),nl,writeln('Description:'),writeln('During World War I, commanding officer General Broulard (Adolphe Menjou) orders his subordinate, General Mireau (George Macready), to attack a German trench position, offering a promotion as an incentive. Though the mission is foolhardy to the point of suicide, Mireau commands his own subordinate, Colonel Dax (Kirk Douglas), to plan the attack. When it ends in disaster, General Mireau demands the court-martial of three random soldiers in order to save face.'))).
+duration2A4:-
+    writeln("What is the prefered duration of the movie?"),
+    writeln('1- two hours or more.'),
+    writeln('2- less than two hours.'),
+    read(X),
+    (not(X==1),not(X==2) -> 
+	writeln("Invalid Input! You must write either 1-2"),duration2A4;((X==1)->writeln('Heartbreak Ridge - 1986'),nl,writeln('Description:'),writeln('Hard-nosed, hard-living Marine Gunnery Sergeant Tom Highway (Clint Eastwood) clashes with his superiors and his ex-wife as he takes command of a spoiled recon platoon with a bad attitude.');
+                                                                   (X==2)->writeln('The Good Son - 1993'),nl,writeln('Description:'),writeln('Mark (Elijah Wood), a young boy who loses his mother, must stay with his extended family while his father is away on business. Mark becomes acquainted with his cousin Henry (Macaulay Culkin). However, the extent of Henrys depravity becomes clear when Mark sees him kill a neighbors dog and intentionally create a traffic pileup on the highway. After a supposed mishap on an icy pond with Henrys sister Connie (Quinn Culkin), Mark tries to reveal Henrys crimes before its too late.'))).
+
